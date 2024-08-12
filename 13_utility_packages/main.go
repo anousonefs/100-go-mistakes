@@ -18,4 +18,8 @@ func main() {
 	// stringset custom type package
 	set2 := stringset.New2("c", "a", "b")
 	fmt.Println(set2.Sort2())
+
+	/* bear in mind that naming a package after what it provides
+	and not what it contains can be an efficient way
+	to increase its expressiveness. */
 }
