@@ -6,9 +6,9 @@ func main() {
 	sum := 100 + 0o10
 	fmt.Println(sum) // output: 108
 
-	b := 0b100
+	b := 0b100 // 4
 	fmt.Printf("b: %v\n", b)
-	hex := 0xF
+	hex := 0xF // 15
 	fmt.Printf("hex: %v\n", hex)
 
 	num := 4_402_998_080
