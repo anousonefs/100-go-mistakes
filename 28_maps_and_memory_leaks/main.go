@@ -58,6 +58,27 @@ func map2() {
 	runtime.KeepAlive(m)
 }
 
+// create new map
+func map3() {
+	// Original map
+	original := map[string]int{"a": 1, "b": 2, "c": 3, "d": 4}
+
+	// New map to hold a subset of elements
+	newMap := make(map[string]int)
+	for k, v := range original {
+		// Only copy over certain elements based on some condition
+		if k == "a" || k == "b" {
+			newMap[k] = v
+		}
+	}
+
+	// Drop the original map
+	original = nil
+
+	// Display results
+	fmt.Println("New map:", newMap)
+}
+
 func randBytes() [128]byte {
 	var b [128]byte
 	_, err := rand.Read(b[:])
