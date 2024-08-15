@@ -7,6 +7,8 @@ import (
 
 func main() {
 	/* consumeMessages() */
+
+	/* when we use the slicing operation with pointers or structs with pointer fields, we need to know that the GC won’t reclaim these elements. In that case, the two options are to either perform a copy or explicitly mark the remaining elements or their fields to nil. */
 	sliceAndPointer()
 }
 
