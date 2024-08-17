@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
+
+	/* When it makes our code more complex—Generics are never mandatory, and as Go developers, we have lived without them for more than a decade. If we’re writing generic functions or structures and we figure out that it doesn’t make our code clearer, we should probably reconsider our decision for that particular use case */
+
 	m := map[string]int{
 		"one":   1,
 		"two":   2,

@@ -14,13 +14,8 @@ func main() {
 	cust1 := customer{id: "x", operations: []float64{1.}}
 	cust2 := customer{id: "x", operations: []float64{1.}}
 
-	/*
-			1. Channels—Compare whether two channels were created by the same call to make or if both are nil.
-			2. Interfaces—Compare whether two interfaces have identical dynamic types and equal dynamic values or if both are nil.
-			3. Pointers—Compare whether two pointers point to the same value in memory or if both are nil.
-			4. Structs and arrays—Compare whether they are composed of similar types.
-		  5. Booleans, numerics, strings Compare whether two of them are equal.
-	*/
+	/*To compare types in Go, you can use the == and != operators if two types are comparable: Booleans,
+	  numerals, strings, pointers, channels, and structs are composed entirely of comparable types. Otherwise, you can either use reflect.DeepEqual and pay the price of reflection or use custom implementations and libraries.*/
 
 	// can not compare because operations field is slice
 	/* fmt.Printf("use ==: %v\n", cust1 == cust2) */
@@ -30,6 +25,9 @@ func main() {
 
 	/* Running a local benchmark on a slice composed of 100 elements shows that our custom equal method is about 96 times faster than reflect.DeepEqual. */
 	fmt.Printf("custom equal method: %v\n", cust1.equal(cust2))
+
+	/* NOTE: bytes.Compare function to compare two slices of bytes. Before implementing a custom method, we need to make sure we don’t reinvent the wheel.*/
+
 }
 
 func (a customer) equal(b customer) bool {
