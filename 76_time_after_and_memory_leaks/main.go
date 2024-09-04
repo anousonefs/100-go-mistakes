@@ -17,6 +17,7 @@ func handle(event Event) {
 	log.Printf("Handling event: %v\n", event)
 }
 
+// use time.After
 func consumer(ch <-chan Event) {
 	for {
 		select {
@@ -74,6 +75,7 @@ func consumerV3(ch <-chan Event) {
 	}
 }
 
+// clear resource
 func consumerV4(ch <-chan Event, done <-chan struct{}) {
 	timerDuration := 2 * time.Second
 	timer := time.NewTimer(timerDuration)

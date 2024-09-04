@@ -41,5 +41,8 @@ func callEmbedType() {
 
 	// solution
 	fmt.Printf("fix1: %v\n", y.Baz())
-	fmt.Printf("fix2: %v\n", y.Baz())
+}
+
+func main() {
+	callEmbedType()
 }
